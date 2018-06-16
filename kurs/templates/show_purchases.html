@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <title>Purchases</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <p class="navbar-text navbar-right">Signed in as {{ request.user }} <a href="/logout/" class="navbar-link">| Logout</a></p>
+        <div class="navbar-header">
+
+      <a class="navbar-brand" href="/">Agrus registration app</a>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      </div>
+  </div>
+</nav>
+
+<div id="elem-view" class="container-fluid">
+<h2>История закупок</h2>
+    {% if  purchases_view %}
+<table class="table table-striped">
+    <tr>
+        <th>№</th>
+        <th>Номер накладной</th>
+        <th>Дата накладной</th>
+        <th>Название элемента</th>
+        <th>Количество элементов</th>
+        <th>Цена элемента</th>
+        <th>Имя поставщика</th>
+    </tr>
+
+    {% for purchase in purchases_view %}
+    <tr>
+    <td></td>
+        {% for invoice in invoices_view %}
+{% if invoice.invoice_id == purchase.invoice_id %}
+    <td>{{ invoice.invoice_number }}</td>
+
+        <td>{{ invoice.invoice_date  }}</td>
+
+    {% for element in elements_view %}
+        {% if element.element_id == purchase.element_id %}
+        <td>{{ element.element_name }}</td>
+        {% endif %}
+        {% endfor %}
+    <td> {{ purchase.elements_quantity }}</td>
+    <td> {{ purchase.element_price }}</td>
+    {% for supplier in suppliers_view %}{% if  supplier.supplier_customer_id == invoice.supplier_customer_id %}<td>{{ supplier.supplier_customer_name }}</td>{% endif %}{% endfor %}
+{% endif %}
+    {% endfor %}
+        {% endfor %}
+    </tr>
+
+         </table>
+        {% else %}
+        <p align="center" class="text-danger">В базе, пока что нету закупок</p>
+    {% endif%}
+</div>
+</body>
+</html>

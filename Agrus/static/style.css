@@ -1,0 +1,51 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'liberation-serif';
+    font-size: 16pt;
+    background: white !important;
+    padding: 10px;
+    margin: 0;
+    padding-top: 70px;
+        counter-reset: Serial;
+}
+h1 {
+    text-align: center;
+}
+
+.container-fluid {
+   background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+    }
+.text_or {
+  text-align: center;
+  font-family: 'liberation-serif';
+ font-size: 14pt;
+}
+#btn-row{
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.text-help{
+    font-family: 'liberation-serif';
+    font-size: 18pt;
+}
+.option-text{
+     font-family: 'liberation-serif';
+    font-size: 14pt;
+}
+table
+{
+    border-collapse: separate;
+}
+
+tr td:first-child:before
+{
+  counter-increment: Serial;
+  content:  counter(Serial); 
+}

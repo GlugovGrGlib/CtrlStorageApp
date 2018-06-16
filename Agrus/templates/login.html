@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    {% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="well">
+    <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+    <form action="" method="post">
+      {% csrf_token %}
+
+        <table>
+      {{ form.as_table }}
+      <table>
+      <input class="btn btn-default" value="Войти" type="submit">
+
+    </form>
+</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"><p class="text_or">Также вы можете:</p></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"><a href = '/register/'><button class="btn btn-default">Зарегистрироваться</button></a></div>
+      <div class="col-md-1"><p>или</p></div>
+      <div class="col-md-3"><a href = '/admin/'><button class = "btn btn-default">Войти как администратор</button></a></div>
+    </div>
+  </div>
+  </div>
+  </body>
+</html>
