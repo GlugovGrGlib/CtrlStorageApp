@@ -3,6 +3,7 @@
 <head>
     {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
     <meta charset="UTF-8">
     <title>Ctrls Base</title>
      <!-- Latest compiled and minified CSS -->
@@ -28,7 +29,11 @@
 </nav>
 
 <div id="ctrls-view" class="container-fluid">
+
 <h2 id="ctrl_text">База данных контроллеров</h2>
+<div class="row">
+<a href="/agrus/add_ctrl"> <button class="btn btn-default" style="float:right;">Добавить новый контроллер</button></a>
+</div>
     {% if ctrls_view %}
 <table class="table table-striped ftable">
     <tr>

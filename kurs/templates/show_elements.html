@@ -3,6 +3,7 @@
 <head>
     {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
     <meta charset="UTF-8">
     <title>Elements Base</title>
      <!-- Latest compiled and minified CSS -->
@@ -28,6 +29,11 @@
 
 <div id="elem-view" class="container-fluid">
 <h2 >База данных элементов</h2>
+<div class="row">
+  <button style="float:right" onclick="addElementWindow()" class="btn btn-default">Добавить новый елемент</button>
+</div>
+<br>
+<div class="row">
     {% if elements_view %}
 <table class="table table-striped">
     <tr>
@@ -52,5 +58,17 @@
         <p align="center" class="text-danger">В базе, пока что нет элементов</p>
     {% endif%}
 </div>
+</div>
+<script>
+
+  function addElementWindow(){
+    myWindow = window.open("/agrus/add_element", "_blank", "toolbar=no,top=250,left=250,width=800,height=500");
+  }
+  $(function() {
+    var blurred = false;
+    window.onblur = function() { blurred = true; };
+    window.onfocus = function() { blurred && (location.reload()); };
+  });
+</script>
 </body>
 </html>

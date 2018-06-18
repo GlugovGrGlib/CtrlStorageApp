@@ -3,6 +3,8 @@
 <head>
     {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>Add Ctrl</title>
      <!-- Latest compiled and minified CSS -->
@@ -30,7 +32,7 @@
     {% csrf_token %}
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4"><table class="table">{{ form.as_table }}</table></div>
+        <div class="col-md-4"><table class="table">{{ form }}</table></div>
     </div>
     <div class="row">
         <div class="col-md-5"></div>

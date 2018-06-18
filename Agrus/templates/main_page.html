@@ -2,6 +2,7 @@
 <html lang="ru">
     {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
 <head>
     <meta charset="UTF-8">
     <title>Agrus</title>
@@ -27,86 +28,23 @@
 
     <div class="container-fluid">
         <p class="text-center text-help" >Выберите операцию которую хотите осуществить:</p>
-        <div class="row well" id="btn-row">
-          <div class="col-md-3"><p class="option-text">Склад:</p></div>
-            <!--<div class="col-md-2"></div>-->
-            <div class="col-md-4">
-                <a href="/agrus/stock"> <button class="btn btn-block btn-default">Просмотреть остаток на складе</button></a>
-            </div>
+        <div class="row" id="btn-row">
+                <div class="stock" >
+                <a href="/agrus/stock"> <button class="btn btn-default menu-btn" style="margin:auto; float:center !important;">Просмотреть остаток на складе</button></a>
+                </div>
+                <div class="row stock">
+                 <a href="/agrus/ctrls"> <button class="btn target btn-default menu-btn">Просмотреть базу данных контроллеров</button></a>
+                 <a href ="/agrus/elements"> <button class="btn  btn-default menu-btn">Просмотреть базу данных елементов</button></a>
+                 <a href="/agrus/bom" > <button class="btn  btn-default menu-btn">Просмотреть спецификации контроллеров</button></a>
+                 <a href="/agrus/orders"> <button class="btn  btn-default menu-btn">Просмотреть историю заказов</button></a>
+               </div>
+               <div class="row stock">
+                <a href="/agrus/purchases"><button class="btn  btn-default menu-btn">Просмотреть историю закупок</button></a>
+                <a href="/agrus/consumptions"><button class="btn  btn-default menu-btn">Просмотреть историю расходов</button></a>
+                <a href="/agrus/suppliers"><button class="btn  btn-default menu-btn">Просмотреть базу данных поставщиков</button></a>
+                <a href="/agrus/clients"><button class="btn  btn-default menu-btn">Просмотреть базу данных клиентов</button></a>
+                </div>
         </div>
-        <div class="row well" id="btn-row">
-            <div class="col-md-3"><p class="option-text">Контроллеры:</p></div>
-            <div class="col-md-4">
-                <a href="/agrus/ctrls"> <button class="btn btn-block target btn-default">Просмотреть базу данных контроллеров</button></a>
-            </div>
-            <div class="col-md-4">
-                <a href="/agrus/add_ctrl"> <button class="btn btn-default btn-block">Добавить новый контроллер</button></a>
-            </div>
-        </div>
-        <div class="row well" id="btn-row">
-            <div class="col-md-3"><p class="option-text">Елементы:</p></div>
-            <div class="col-md-4">
-               <a href ="/agrus/elements"> <button class="btn btn-block btn-default">Просмотреть базу данных елементов</button></a>
-            </div>
-            <div class="col-md-4">
-              <a href="/agrus/add_element"><button class="btn btn-default btn-block">Добавить новый елемент</button></a>
-            </div>
-        </div>
-        <div class="row well" id="btn-row">
-            <div class="col-md-3"><p class="option-text">Спецификации контроллеров:</p></div>
-            <div class="col-md-4">
-              <a href="/agrus/bom" > <button class="btn btn-block btn-default">Просмотреть спецификации контроллеров</button></a>
-            </div>
-            <div class="col-md-4">
-                <a href="/agrus/add_bom"><button class="btn btn-default btn-block">Добавить новую спецификацию</button></a>
-            </div>
-        </div>
-        <div class="row well" id="btn-row">
-            <div class="col-md-3"><p class="option-text">Заказы:</p></div>
-            <div class="col-md-4">
-               <a href="/agrus/orders"> <button class="btn btn-block btn-default">Просмотреть историю заказов</button></a>
-            </div>
-            <div class="col-md-4">
-                <a href="/agrus/add_order"><button class="btn btn-default btn-block">Добавить новый заказ</button></a>
-            </div>
-        </div>
-        <div class="row well" id="btn-row">
-            <div class="col-md-3"><p class="option-text">Закупки:</p></div>
-            <div class="col-md-4">
-                <a href="/agrus/purchases"><button class="btn btn-block btn-default">Просмотреть историю закупок</button></a>
-            </div>
-            <div class="col-md-4">
-                <a href="/agrus/add_purchase"><button class="btn btn-default btn-block">Добавить новую закупку</button></a>
-            </div>
-        </div>
-        <div class="row well" id="btn-row">
-            <div class="col-md-3"><p class="option-text">Расходы:</p></div>
-            <div class="col-md-4">
-                <a href="/agrus/consumptions"><button class="btn btn-block btn-default">Просмотреть историю расходов</button></a>
-            </div>
-            <div class="col-md-4">
-                <a href="/agrus/add_consumption"><button class="btn btn-default btn-block">Добавить новый расход</button></a>
-            </div>
-        </div>
-         <div class="row well" id="btn-row">
-            <div class="col-md-3"><p class="option-text">Поставщики:</p></div>
-            <div class="col-md-4">
-                <a href="/agrus/suppliers"><button class="btn btn-block btn-default">Просмотреть базу данных поставщиков</button></a>
-            </div>
-            <div class="col-md-4">
-                <a href="/agrus/add_suppiler"><button class="btn btn-default btn-block">Добавить нового поставщика</button></a>
-            </div>
-        </div>
-         <div class="row well" id="btn-row">
-            <div class="col-md-3"><p class="option-text">Клиенты:</p></div>
-            <div class="col-md-4">
-                <a href="/agrus/clients"><button class="btn btn-block btn-default">Просмотреть базу данных клиентов</button></a>
-            </div>
-            <div class="col-md-4">
-                <a href="/agrus/add_customer"><button class="btn btn-default btn-block">Добавить нового клиента</button></a>
-            </div>
-        </div>
-
 </div>
 </body>
 </html>

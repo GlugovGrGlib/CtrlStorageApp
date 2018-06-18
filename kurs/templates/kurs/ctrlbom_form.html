@@ -3,10 +3,12 @@
 <head>
     {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
     <meta charset="UTF-8">
     <title>Add BOM</title>
      <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
@@ -26,7 +28,7 @@
   </div>
 </nav>
 <div class="well">
-<form action="/agrus/add_ctrl/" method="post">
+<form action="/agrus/add_bom/" method="post">
     {% csrf_token %}
     <div class="row">
         <div class="col-md-4"></div>
@@ -38,5 +40,18 @@
     </div>
 </form>
 </div>
+<script>
+  function addCtrlWindow(){
+    myWindow = window.open("/agrus/add_ctrl", "_blank", "toolbar=yes,top=500,left=500,width=500,height=500");
+  }
+  function addElementWindow(){
+    myWindow = window.open("/agrus/add_element", "_blank", "toolbar=yes,top=500,left=500,width=500,height=500");
+  }
+  $(function() {
+    var blurred = false;
+    window.onblur = function() { blurred = true; };
+    window.onfocus = function() { blurred && (location.reload()); };
+  });
+</script>
 </body>
 </html>

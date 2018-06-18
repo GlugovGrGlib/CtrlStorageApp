@@ -3,6 +3,7 @@
 <head>
     {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
     <meta charset="UTF-8">
     <title>CTRLS BOMs</title>
      <!-- Latest compiled and minified CSS -->
@@ -28,6 +29,10 @@
 
 <div id="elem-view" class="container-fluid">
 <h2 >Спецификации контроллеров</h2>
+<div class="row">
+  <a href="/agrus/add_bom"><button style="float:right" class="btn btn-default">Добавить новую спецификацию</button></a>
+</div>
+<br>
     {% if bom_view %}
 <table class="table table-striped">
     <tr>

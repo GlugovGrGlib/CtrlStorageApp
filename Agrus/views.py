@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -11,7 +12,7 @@ from django.views.generic.base import View
 from django.db import connection
 # Create your views here.
 
-# cur = connection.cursor()  
+# cur = connection.cursor()
 #         # execute the stored procedure passing in
 #         # search_string as a parameter
 #         cur.callproc('searcher_document_search', [search_string,])

@@ -2,6 +2,7 @@
 <html lang="ru">
     {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
 <head>
     <meta charset="UTF-8">
     <title>Add Ctrl</title>
@@ -26,8 +27,8 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">
-    var delay = 2000;
-setTimeout(function(){ window.location = "{% url 'start' %}"; }, delay);
+    var delay = 1500;
+    setTimeout(function(){ window.close() }, delay);
    </script>
 
 <h1>Позиция удачно добавлена</h1>

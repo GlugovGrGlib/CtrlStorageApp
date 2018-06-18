@@ -3,6 +3,7 @@
 <head>
     {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
     <meta charset="UTF-8">
     <title>Suppilers</title>
      <!-- Latest compiled and minified CSS -->
@@ -28,6 +29,9 @@
 
 <div id="elem-view" class="container-fluid">
 <h2>База данных поставщиков</h2>
+<div class="row">
+  <a href="/agrus/add_suppiler"><button style="float:right" class="btn btn-default ">Добавить нового поставщика</button></a>
+</div>
     {% if suppliers_view %}
 <table class="table table-striped">
     <tr>
